@@ -1,0 +1,72 @@
+/* Importando fonte Orbitron do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+
+/* Tailwind base, components e utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Garantindo que body e html ocupem 100% da altura */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('/images/4k.png');
+  background-size: cover;      
+  background-position: center; 
+  background-repeat: no-repeat; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white; 
+}
+
+/* Navbar fixa */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Classe de fonte Orbitron */
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+/* Listas */
+li {
+  list-style: none;
+}
+
+/* Main padding para não ficar atrás da navbar fixa */
+main {
+  padding-top: 4rem; /* ajuste conforme altura da navbar */
+}
+
+/* Esconde barra de rolagem no Chrome, Safari e Edge */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Esconde barra de rolagem no Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* Esconde barra de rolagem no IE e Edge antigos */
+body {
+  -ms-overflow-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}

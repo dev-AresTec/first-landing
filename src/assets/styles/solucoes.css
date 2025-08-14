@@ -1,0 +1,90 @@
+.solucoes-wrapper {
+  min-height: 80vh;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.solucoes-titulo {
+  font-size: 3rem;
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+}
+
+.solucoes-subtexto {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  color: #ddd;
+}
+
+/* Container dos cards */
+.solucoes-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Card individual */
+.solucao-card {
+  position: relative; /* para overlay */
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  flex: 1 1 250px; /* ocupa espaço proporcional */
+  max-width: 300px;
+  text-align: center;
+  background-color: #222;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* para overlay não ultrapassar */
+}
+
+.solucao-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagem do card */
+.solucao-card img {
+  width: 120px; /* maior */
+  height: 120px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.solucao-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay transparente */
+.solucao-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.solucao-card:hover::after {
+  opacity: 1;
+}
+
+/* Título e texto do card */
+.solucao-card h2 {
+  font-size: 1.6rem;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.solucao-card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
