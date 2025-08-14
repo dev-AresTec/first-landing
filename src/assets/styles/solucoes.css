@@ -1,61 +1,70 @@
 .solucoes-wrapper {
-  min-height: 80vh;
+  min-height: 70vh; /* altura um pouco menor */
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 6vh 3vw; /* menos espaçamento */
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 90vw; /* limita largura máxima */
+  margin: 0 auto; /* centraliza */
+  background: rgba(34, 34, 34, 0.15); /* leve fundo para destacar */
+  border-radius: 1.5vw;
 }
 
 .solucoes-titulo {
-  font-size: 3rem;
+  font-size: 3.4vw; /* menor */
   color: #ffd700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2vh;
+  font-family: 'dynapuff', cursive;
 }
 
 .solucoes-subtexto {
-  font-size: 1.3rem;
+  font-size: 1.6vw; /* menor */
   line-height: 1.6;
-  max-width: 900px;
-  margin: 0 auto 3rem;
+  max-width: 50vw; /* menor largura para não “espalhar” */
+  margin: 0 auto 5vh;
   color: #ddd;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Container dos cards */
 .solucoes-cards {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3vw;
   flex-wrap: wrap;
 }
 
 /* Card individual */
 .solucao-card {
-  position: relative; /* para overlay */
-  border-radius: 12px;
-  padding: 2rem 1rem;
-  flex: 1 1 250px; /* ocupa espaço proporcional */
-  max-width: 300px;
+  position: relative;
+  border-radius: 1.5vw;
+  padding: 3vh 2vw; /* menos espaçamento interno */
+  flex: 1 1 18vw;
+  max-width: 25vw; /* mais compacto */
   text-align: center;
-  background-color: #222;
+  background-color: rgba(34, 32, 32, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* para overlay não ultrapassar */
+  overflow: hidden;
 }
 
 .solucao-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.8vh);
+  box-shadow: 0 1.5vh 4vw rgba(0, 0, 0, 0.3);
 }
 
 /* Imagem do card */
 .solucao-card img {
-  width: 120px; /* maior */
-  height: 120px;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
+  width: 70%;
+  height: auto;
+  margin-bottom: 1.5vh;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 0.8vw; /* bordas levemente arredondadas */
+  opacity: 0.5; /* imagem levemente transparente */
 }
 
 .solucao-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.08);
+  opacity: 1; /* volta ao normal no hover */
 }
 
 /* Overlay transparente */
@@ -66,10 +75,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
   opacity: 0;
   transition: opacity 0.3s ease;
-  border-radius: 12px;
+  border-radius: 1.5vw;
 }
 
 .solucao-card:hover::after {
@@ -78,13 +87,13 @@
 
 /* Título e texto do card */
 .solucao-card h2 {
-  font-size: 1.6rem;
+  font-size: 1.7vw;
   color: #ffd700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1vh;
 }
 
 .solucao-card p {
-  font-size: 1rem;
+  font-size: 1.3vw;
   color: #ccc;
   line-height: 1.5;
 }
