@@ -1,0 +1,93 @@
+:root {
+  --navbar-height: 68px;
+  --navbar-bg: rgba(17, 17, 17, .65);
+  --text: #fff;
+  --hover: #60a5fa;
+}
+
+/* área que capta hover */
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  z-index: 1000;
+}
+
+/* barra */
+.navbar {
+  height: 100%;
+  width: 100%;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+/* escondida pelo scroll */
+.navbar.is-hidden {
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+}
+
+/* se passar mouse na área do topo → reaparece */
+.navbar-wrapper:hover .navbar {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* conteúdo */
+.nav-list {
+  margin: 0;
+  padding: 12px 24px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.nav-item.center { text-align: center; }
+
+.nav-list a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.nav-list a:hover { color: var(--hover); }
+
+/* logo central */
+.nav-logo {
+  text-align: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  font-family: 'Orbitron', system-ui, sans-serif;
+}
+.nav-logo > span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  opacity: .9;
+}
+
+/* empurra conteúdo */
+body { padding-top: var(--navbar-height); }
+
+/* em touch sempre visível */
+@media (hover: none) and (pointer: coarse) {
+  .navbar.is-hidden {
+    opacity: 1; 
+    transform: none; 
+    pointer-events: auto;
+  }
+}

@@ -1,56 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import "./Navbar.css";
 
-const Navbar = () => {
+export default function Navbar() {
+  const [hidden, setHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 50) {
+        setHidden(true); // rolando para baixo -> esconde
+      } else {
+        setHidden(false); // rolando para cima -> mostra
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md shadow-md">
-      <div className="max-w-7xl mx-auto px-6">
-        <ul className="grid grid-cols-5 items-center py-4 text-white font-semibold text-base">
-          
-          <li className="text-center">
-            <a 
-              href="#home" 
-              className="hover:text-blue-400 transition-colors duration-300"
-            >
-              Home
-            </a>
-          </li>
+    <div className="navbar-wrapper">
+      <nav className={`navbar ${hidden ? "is-hidden" : ""}`}>
+        <ul className="nav-list">
+          <li className="nav-item center"><a href="#home">Home</a></li>
+          <li className="nav-item center"><a href="#sobre">Sobre</a></li>
 
-          <li className="text-center">
-            <a 
-              href="#sobre" 
-              className="hover:text-blue-400 transition-colors duration-300"
-            >
-              Sobre
-            </a>
-          </li>
-
-          <li className="text-center text-3xl tracking-wider text-white font-bold font-orbitron leading-tight">
+          <li className="nav-logo">
             ARES
-            <span className="block text-sm tracking-[0.2em]">TECNOLOGIA</span>
+            <span>TECNOLOGIA</span>
           </li>
 
-          <li className="text-center">
-            <a 
-              href="#servicos" 
-              className="hover:text-blue-400 transition-colors duration-300"
-            >
-              Serviços
-            </a>
-          </li>
-
-          <li className="text-center">
-            <a 
-              href="#Solucoes" 
-              className="hover:text-blue-400 transition-colors duration-300"
-            >
-              Solucoes
-            </a>
-          </li>
-
+          <li className="nav-item center"><a href="#servicos">Serviços</a></li>
+          <li className="nav-item center"><a href="#solucoes">Soluções</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
-};
-
-export default Navbar;
+}
