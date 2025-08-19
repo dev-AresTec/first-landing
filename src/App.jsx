@@ -26,7 +26,7 @@ function App() {
           <Servico />
         </section>
 
-        <section id="Solucoes">
+        <section id="solucoes">
           <Solucoes />
         </section>
       </main>
