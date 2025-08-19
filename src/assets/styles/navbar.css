@@ -5,19 +5,34 @@
   --hover: #60a5fa;
 }
 
-/* área que capta hover */
+/* Wrapper só organiza a pilha; não ocupa layout */
 .navbar-wrapper {
+  position: fixed;
+  inset: 0 auto auto 0; /* top:0; left:0; */
+  width: 100%;
+  height: 0;
+  z-index: 1000;
+  pointer-events: none; /* quem decide eventos são os filhos */
+}
+
+/* Zona invisível que capta hover no topo da tela */
+.navbar-hoverzone {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: var(--navbar-height);
-  z-index: 1000;
+  pointer-events: auto; /* precisa receber hover */
+  background: transparent;
+  z-index: 1000; /* abaixo da navbar quando ela aparece */
 }
 
-/* barra */
+/* A barra em si (fixa no topo) */
 .navbar {
-  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--navbar-height);
   width: 100%;
   background: var(--navbar-bg);
   backdrop-filter: blur(6px);
@@ -25,23 +40,25 @@
   border-bottom: 1px solid rgba(255,255,255,.08);
   box-shadow: 0 6px 18px rgba(0,0,0,.18);
   transition: opacity .25s ease, transform .25s ease;
+  z-index: 1001; /* acima da hoverzone */
+  pointer-events: auto; /* links clicáveis quando visível */
 }
 
-/* escondida pelo scroll */
+/* Esconde quando rolou a página */
 .navbar.is-hidden {
   opacity: 0;
   transform: translateY(-12px);
-  pointer-events: none;
+  pointer-events: none; /* não bloquear conteúdo por baixo */
 }
 
-/* se passar mouse na área do topo → reaparece */
-.navbar-wrapper:hover .navbar {
+/* Quando o mouse entra na zona do topo, reexibe a navbar oculta */
+.navbar-hoverzone:hover ~ .navbar.is-hidden {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-/* conteúdo */
+/* Conteúdo da nav */
 .nav-list {
   margin: 0;
   padding: 12px 24px;
@@ -63,7 +80,7 @@
 }
 .nav-list a:hover { color: var(--hover); }
 
-/* logo central */
+/* Logo */
 .nav-logo {
   text-align: center;
   color: #fff;
@@ -80,14 +97,14 @@
   opacity: .9;
 }
 
-/* empurra conteúdo */
-body { padding-top: var(--navbar-height); }
+/* Importante: NÃO empurre o body (sem padding-top) */
+/* body { padding-top: var(--navbar-height); }  <-- deixe comentado */
 
-/* em touch sempre visível */
+/* Em dispositivos touch (sem hover), a navbar fica sempre visível */
 @media (hover: none) and (pointer: coarse) {
   .navbar.is-hidden {
-    opacity: 1; 
-    transform: none; 
+    opacity: 1;
+    transform: none;
     pointer-events: auto;
   }
 }

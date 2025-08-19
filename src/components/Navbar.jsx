@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from "react";
-import "./Navbar.css";
+import "../assets/styles/navbar.css"; // Certifique-se de que o caminho está correto
 
 export default function Navbar() {
   const [hidden, setHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 50) {
-        setHidden(true); // rolando para baixo -> esconde
+      if (window.scrollY > 50) {
+        setHidden(true); // rolou para baixo -> esconde
       } else {
-        setHidden(false); // rolando para cima -> mostra
+        setHidden(false); // está no topo -> mostra
       }
-      setLastScrollY(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <div className="navbar-wrapper">
