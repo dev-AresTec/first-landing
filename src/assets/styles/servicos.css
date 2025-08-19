@@ -1,11 +1,9 @@
+
 .servico-wrapper {
   display: flex;
   flex-direction: column;
   height: 150vh;
   width: 100%;
-  /* background-color: black; */
-  color: white;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Topo ocupa 25% */
@@ -24,7 +22,7 @@
   font-size: 3rem;
   margin-bottom: 1rem;
   font-family: 'RNS Obesa', sans-serif;
-  text-shadow: 2px 2px 4px rgba(170, 157, 157, 0.55); /* sombra para destaque */
+  text-shadow: 2px 2px 4px rgb(13, 1, 1); /* sombra para destaque */
 }
 
 .topo-texto {
@@ -32,8 +30,9 @@
   line-height: 1.4;
   max-width: 80vw;
   font-family: 'Gabo Driver', sans-serif;
-  font-weight: 600;
-  color: #ffffffaf;
+  font-weight: 700;
+  color: #ffffff;
+  
 }
 /* Container inferior */
 .bottom-container {

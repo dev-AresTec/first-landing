@@ -1,4 +1,3 @@
-import React from "react";
 import VerticalCarousel from "./VerticalCarousel";
 import '../assets/styles/Hero.css'; // Assuming you have a CSS file for styles
 

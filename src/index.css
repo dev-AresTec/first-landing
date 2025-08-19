@@ -6,6 +6,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'RNS Obesa';
+  src: url('/fonts/rnsobesa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gabo Drive';
+  src: url('/fonts/gabodrive.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* Garantindo que body e html ocupem 100% da altura */
 html, body {
   height: 100%;

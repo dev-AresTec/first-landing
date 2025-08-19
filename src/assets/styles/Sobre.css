@@ -53,16 +53,17 @@
 }
 
 .card h3 {
-  color: #e5a000e2;
-  font-family: 'RNS Obesa', sans-serif;
+  color: #f5dc50 ;
+  font-family: 'Orbitron', sans-serif;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  font-weight: 800;
 }
 
 .card p {
   font-size: 0.9rem;
   color: #ffffff;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
 
 }

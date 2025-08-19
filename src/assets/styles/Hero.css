@@ -5,20 +5,6 @@ html, body {
   overflow-x: hidden;
 }
 
-@font-face {
-  font-family: 'RNS Obesa';
-  src: url('/fonts/rnsobesa.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gabo Drive';
-  src: url('/fonts/gabodrive.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .hero-section {
   padding: 4rem 3rem;
   min-height: 80vh;
@@ -101,7 +87,7 @@ html, body {
 .hero-button {
   background-color: #F2BB3C;
   font-family: 'Gabo Drive', sans-serif;
-  color: #060007;
+  color: rgb(29, 21, 36);
   padding: 1rem 2rem;
   border-radius: 1rem;
   font-weight: 600;
@@ -114,5 +100,5 @@ html, body {
 
 .hero-button:hover {
   background-color: #f7a100;
-  color: blueviolet;
+  color: #060007;
 }

@@ -37,10 +37,10 @@
 /* Card individual */
 .solucao-card {
   position: relative;
-  border-radius: 1.5vw;
-  padding: 3vh 2vw; /* menos espaçamento interno */
-  flex: 1 1 18vw;
-  max-width: 25vw; /* mais compacto */
+  border-radius: 1.2vw; /* 1.5vw * 0.8 */
+  padding: 2.4vh 1.6vw; /* 3vh*0.8, 2vw*0.8 */
+  flex: 1 1 14.4vw; /* 18vw*0.8 */
+  max-width: 20vw; /* 25vw*0.8 */
   text-align: center;
   background-color: rgba(34, 32, 32, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -48,23 +48,23 @@
 }
 
 .solucao-card:hover {
-  transform: translateY(-0.8vh);
-  box-shadow: 0 1.5vh 4vw rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.64vh); /* -0.8vh*0.8 */
+  box-shadow: 0 1.2vh 1.6vw rgba(14, 66, 169, 0.815); /* 1.5vh*0.8, 2vw*0.8 */
 }
 
 /* Imagem do card */
 .solucao-card img {
-  width: 70%;
+  width: 100%;
   height: auto;
-  margin-bottom: 1.5vh;
+  margin-bottom: 1.2vh; /* 1.5vh*0.8 */
   transition: transform 0.3s ease, opacity 0.3s ease;
-  border-radius: 0.8vw; /* bordas levemente arredondadas */
-  opacity: 0.5; /* imagem levemente transparente */
+  border-radius: 0.64vw; /* 0.8vw*0.8 */
+  opacity: 0.5;
 }
 
 .solucao-card:hover img {
   transform: scale(1.08);
-  opacity: 1; /* volta ao normal no hover */
+  opacity: 1;
 }
 
 /* Overlay transparente */
@@ -78,7 +78,7 @@
   background: rgba(255, 255, 255, 0.03);
   opacity: 0;
   transition: opacity 0.3s ease;
-  border-radius: 1.5vw;
+  border-radius: 1.2vw; /* 1.5vw*0.8 */
 }
 
 .solucao-card:hover::after {
@@ -87,13 +87,19 @@
 
 /* Título e texto do card */
 .solucao-card h2 {
-  font-size: 1.7vw;
-  color: #ffd700;
-  margin-bottom: 1vh;
+  text-align: left;
+  color: #fff200;
+  margin-bottom: 0.8vh; /* 1vh*0.8 */
+  font-family: 'dynapuff', cursive; 
+  font-weight: 700;
+  font-size: 1.5vw; /* 1.7vw*0.8 */
+
 }
 
 .solucao-card p {
-  font-size: 1.3vw;
-  color: #ccc;
-  line-height: 1.5;
+  text-align: justify;
+  line-height: 1.5; /* 1.5*0.8 */
+  font-family: 'Gabo Drive', sans-serif;
+  font-size: 1.2vw; /* 1.3vw*0.8 */
+  color: #f4efefee;
 }
